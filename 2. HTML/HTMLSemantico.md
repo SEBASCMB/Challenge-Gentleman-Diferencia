@@ -178,3 +178,7 @@ En este caso, es mucho más fácil de entender qué es cada sección de la pági
 - **HTML semántico** nos ayuda a organizar mejor el contenido de las páginas.
 - Los navegadores y motores de búsqueda **entienden mejor** el propósito del contenido con etiquetas semánticas.
 - Hace que el código sea más **fácil de leer** y **mantener**.
+  
+![Ejemplo](https://github.com/user-attachments/assets/e58ba138-98e5-4570-a21b-bc05959003f4)
+
+
