@@ -1,0 +1,72 @@
+Cuando se trata de nombrar variables en JavaScript, hay algunas reglas y buenas prácticas que debes seguir para que tu código sea claro y fácil de entender. ¡Vamos a repasarlas!
+
+### Reglas para Nombrar Variables
+
+1. **Caracteres Válidos**:
+    
+    - Puedes usar letras (mayúsculas y minúsculas), dígitos (0-9), el símbolo de subrayado (_) y el signo de dólar ($).
+    - **Ejemplos válidos**: `nombre`, `edad`, `usuario1`, `_contador`, `$precio`.
+
+
+1. **No Comenzar con Dígitos**:
+    
+    - Las variables no pueden comenzar con un dígito. Deben comenzar con una letra, un símbolo de subrayado o un signo de dólar.
+    - **Ejemplo inválido**: `1usuario` (esto es incorrecto).
+
+1. **Longitud de Nombre**:
+    
+    - No hay límite de longitud en el nombre de las variables, pero es recomendable que sean lo suficientemente descriptivas. Evita nombres muy cortos o crípticos.
+
+1. **Sensibilidad a Mayúsculas y Minúsculas**:
+    
+    - Los nombres de las variables son sensibles a las mayúsculas y minúsculas. Esto significa que `nombre`, `Nombre` y `NOMBRE` son considerados tres variables diferentes.
+    - **Ejemplo**: `usuario`, `Usuario` y `USUARIO` son distintos.
+
+1. **Palabras Reservadas**:
+    
+    - No puedes usar palabras reservadas de JavaScript (también llamadas "palabras clave") como nombres de variables. Estas incluyen palabras como `var`, `let`, `const`, `function`, `if`, `else`, `while`, entre otras.
+    - **Ejemplo inválido**: `let = "valor";` (esto es incorrecto).
+
+### Buenas Prácticas para Nombrar Variables
+
+1. **Sé Descriptivo**:
+    
+    - Usa nombres que describan claramente el propósito de la variable. Esto ayuda a que otros (y tú mismo en el futuro) entiendan tu código más fácilmente.
+    - **Ejemplo**: En lugar de usar `x`, usa `cantidadDeManzanas`.
+
+1. **Usa Notación Camel Case**:
+    
+    - Una convención común es usar **camelCase** para nombres de variables, donde la primera palabra comienza con minúscula y cada nueva palabra comienza con mayúscula.
+    - **Ejemplo**: `nombreCompleto`, `totalDeVentas`.
+
+1. **Agrupa Palabras**:
+    
+    - Cuando el nombre de la variable tiene varias palabras, agrúpalas en un solo nombre usando camelCase.
+    - **Ejemplo**: En lugar de usar `total_de_ventas`, usa `totalDeVentas`.
+
+1. **Evita Abreviaciones Crípticas**:
+    
+    - Aunque abreviar nombres puede hacerlos más cortos, también puede hacer que sean difíciles de entender. Evita abreviaciones a menos que sean muy comunes.
+    - **Ejemplo**: `num` puede ser aceptable para "número", pero `nmb` no es claro.
+
+1. **Usa Prefijos para Tipo de Variable (opcional)**:
+    
+    - Algunas personas usan prefijos para indicar el tipo de variable, como `str` para cadenas, `num` para números, `arr` para arreglos, etc. Esto puede ayudar a la legibilidad, pero es una preferencia personal.
+    - **Ejemplo**: `strNombre`, `numEdad`, `arrProductos`.
+
+### Ejemplos de Nombres de Variables
+
+|**Ejemplo**|**Descripción**|
+|---|---|
+|`nombre`|Nombre de una persona.|
+|`edad`|Edad de una persona.|
+|`totalVentas`|Total de ventas en un mes.|
+|`productoEnCarrito`|Un producto que está en el carrito.|
+|`listaDeCompras`|Una lista de productos a comprar.|
+
+### Resumen
+
+- **Usa letras, dígitos, _ y $**: pero no empieces con un dígito.
+- **Sé descriptivo**: usa nombres que tengan sentido.
+- **Usa camelCase**: facilita la lectura.
+- **Evita palabras reservadas**: no uses palabras que JavaScript ya usa.
