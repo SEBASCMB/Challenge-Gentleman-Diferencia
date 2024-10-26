@@ -1,0 +1,109 @@
+### ¿Qué son las Estructuras de Datos?
+
+Las **estructuras de datos** son formas de organizar y almacenar datos en una computadora de manera que se puedan usar de manera eficiente. Dependiendo del tipo de datos que necesites manejar, hay diferentes estructuras que puedes utilizar.
+
+### Datos Estructurados
+
+Los **datos estructurados** son información que se organiza de una manera predefinida, lo que facilita su acceso y análisis. Los ejemplos más comunes de datos estructurados son los **arreglos** (arrays) y los **objetos** (objects) en JavaScript.
+
+### Tipos Comunes de Estructuras de Datos en JavaScript
+
+1. **Arreglos (Arrays)**
+    
+    - **Descripción**: Un arreglo es una lista ordenada de elementos. Puedes almacenar múltiples valores en un solo objeto. Los elementos en un arreglo pueden ser de cualquier tipo, incluidos otros arreglos y objetos.
+    - **Acceso**: Puedes acceder a los elementos de un arreglo utilizando su índice, comenzando desde 0.
+    
+    #### Ejemplo:
+
+
+```js
+let frutas = ["manzana", "banana", "naranja"];
+console.log(frutas[0]); // Resultado: "manzana"
+console.log(frutas.length); // Resultado: 3
+```
+
+**Métodos Comunes**:
+
+- `push()`: Agrega un elemento al final del arreglo.
+- `pop()`: Elimina el último elemento del arreglo.
+- `shift()`: Elimina el primer elemento del arreglo.
+- `unshift()`: Agrega un elemento al principio del arreglo.
+- `slice()`: Devuelve una copia superficial de una porción del arreglo.
+
+**Objetos (Objects)**
+
+- **Descripción**: Un objeto es una colección de propiedades, donde cada propiedad tiene un nombre (clave) y un valor. Los objetos son muy versátiles y se pueden usar para representar entidades más complejas.
+- **Acceso**: Puedes acceder a las propiedades de un objeto usando la notación de punto (`.`) o la notación de corchetes (`[]`).
+
+#### Ejemplo:
+
+```js
+let coche = {
+    marca: "Toyota",
+    modelo: "Corolla",
+    anio: 2020
+};
+
+console.log(coche.marca); // Resultado: "Toyota"
+console.log(coche["modelo"]); // Resultado: "Corolla"
+```
+
+**Métodos Comunes**:
+
+- `Object.keys()`: Devuelve un arreglo con las claves de un objeto.
+- `Object.values()`: Devuelve un arreglo con los valores de un objeto.
+- `Object.entries()`: Devuelve un arreglo con pares [clave, valor].
+
+**Mapas (Maps)**
+
+- **Descripción**: Un `Map` es una colección de pares clave-valor donde las claves pueden ser de cualquier tipo. A diferencia de los objetos, los mapas mantienen el orden de inserción de los elementos.
+- **Uso**: Los mapas son útiles cuando necesitas un diccionario donde las claves no son solo cadenas.
+
+#### Ejemplo:
+
+```js
+let mapa = new Map();
+mapa.set("nombre", "Juan");
+mapa.set("edad", 25);
+
+console.log(mapa.get("nombre")); // Resultado: "Juan"
+console.log(mapa.size); // Resultado: 2
+```
+
+**Conjuntos (Sets)**
+
+- **Descripción**: Un `Set` es una colección de valores únicos. No permite duplicados y es útil para almacenar datos sin repeticiones.
+- **Uso**: Puedes usar un conjunto para realizar operaciones matemáticas como la unión y la intersección.
+
+#### Ejemplo:
+
+```js
+let conjunto = new Set();
+conjunto.add(1);
+conjunto.add(2);
+conjunto.add(2); // No se agregará porque 2 ya está en el conjunto
+
+console.log(conjunto.size); // Resultado: 2
+console.log(conjunto.has(1)); // Resultado: true
+```
+
+### Comparación de Estructuras de Datos
+
+|**Estructura**|**Descripción**|**Uso Común**|
+|---|---|---|
+|**Arreglos**|Lista ordenada de elementos|Almacenar colecciones de elementos relacionados.|
+|**Objetos**|Colección de pares clave-valor|Representar entidades con propiedades y métodos.|
+|**Mapas**|Colección de pares clave-valor, claves de cualquier tipo|Almacenar datos relacionados donde el orden importa.|
+|**Conjuntos**|Colección de valores únicos|Almacenar datos sin duplicados y realizar operaciones matemáticas.|
+
+### Mejores Prácticas y Consejos
+
+1. **Elige la estructura adecuada**: Según el tipo de datos que necesites manejar, elige la estructura que mejor se adapte a tus necesidades (por ejemplo, si necesitas mantener el orden, usa arreglos; si necesitas pares clave-valor, usa objetos o mapas).
+    
+2. **Usa métodos integrados**: JavaScript ofrece muchos métodos integrados para trabajar con arreglos y objetos. Aprende a usarlos para facilitar tu trabajo y hacer tu código más limpio y eficiente.
+    
+3. **Evita el uso de índices mágicos**: En lugar de utilizar índices directamente en tu código, asigna valores a variables con nombres descriptivos. Esto hace que tu código sea más legible.
+    
+4. **Cuidado con la mutabilidad**: Recuerda que los objetos y arreglos son mutables, lo que significa que puedes cambiar sus propiedades y elementos. Si no deseas modificar el objeto original, considera hacer una copia.
+    
+5. **Utiliza JSON para intercambiar datos**: Cuando necesites enviar datos a través de la red, utiliza JSON para formatear tus datos. Esto es especialmente útil cuando trabajas con APIs.

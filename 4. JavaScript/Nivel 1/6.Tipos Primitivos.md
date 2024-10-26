@@ -1,0 +1,102 @@
+### 1. String (Cadena de Texto)
+
+- **Descripción**: Representa texto. Las cadenas pueden estar delimitadas por comillas simples (`'`), dobles (`"`), o backticks (`` ` ``) para plantillas literales.
+
+- **Ejemplo**:
+
+```js
+let nombre = "Juan"; // Usando comillas dobles
+let apellido = 'Pérez'; // Usando comillas simples
+let saludo = `Hola, ${nombre} ${apellido}`; // Usando template literals
+console.log(saludo); // Resultado: "Hola, Juan Pérez"
+```
+
+### 2. Number (Número)
+
+- **Descripción**: Representa tanto números enteros como números de punto flotante. En JavaScript, todos los números se almacenan como valores de 64 bits (tipo `double`).
+
+- **Ejemplo**:
+
+```js
+let edad = 30; // Número entero
+let precio = 19.99; // Número decimal
+console.log(edad, precio); // Resultado: 30 19.99
+```
+
+### 3. Boolean (Booleano)
+
+- **Descripción**: Representa un valor verdadero (`true`) o falso (`false`). Es comúnmente utilizado en condiciones y bucles.
+
+- **Ejemplo**:
+
+```js
+let esMayorDeEdad = true;
+let tieneLicencia = false;
+console.log(esMayorDeEdad, tieneLicencia); // Resultado: true false
+```
+
+### 4. Undefined (Indefinido)
+
+- **Descripción**: Indica que una variable ha sido declarada pero aún no se le ha asignado un valor. También es el valor por defecto de las variables que no han sido inicializadas.
+
+- **Ejemplo**:
+
+```js
+let nombreUsuario; // Declarada pero no inicializada
+console.log(nombreUsuario); // Resultado: undefined
+```
+
+### 5. Null (Nulo)
+
+- **Descripción**: Representa la ausencia intencional de cualquier valor u objeto. Se utiliza para indicar que una variable no tiene valor.
+
+- **Ejemplo**:
+
+```js
+let usuario = null; // Sin valor
+console.log(usuario); // Resultado: null
+```
+
+### 6. BigInt
+
+- **Descripción**: Permite trabajar con números enteros que son mayores que el límite de los números de tipo `Number`. Se utiliza al agregar `n` al final del número.
+
+- **Ejemplo**:
+
+```js
+let numeroGrande = 1234567890123456789012345678901234567890n; // BigInt
+console.log(numeroGrande); // Resultado: 1234567890123456789012345678901234567890n
+```
+
+### 7. Symbol
+
+- **Descripción**: Representa un valor único e inmutable que puede ser utilizado como clave para propiedades de objetos. Se utiliza para evitar colisiones entre claves.
+
+- **Ejemplo**:
+
+```js
+let simbolo = Symbol('descripcion'); // Crea un nuevo símbolo
+console.log(simbolo); // Resultado: Symbol(descripcion)
+```
+
+### Resumen de Tipos Primitivos
+
+|**Tipo**|**Descripción**|**Ejemplo**|
+|---|---|---|
+|**String**|Texto.|`let texto = "Hola";`|
+|**Number**|Números (enteros y decimales).|`let numero = 42;`|
+|**Boolean**|Verdadero o falso.|`let esVerdadero = true;`|
+|**Undefined**|Variable declarada sin valor asignado.|`let variable; // undefined`|
+|**Null**|Ausencia intencional de valor.|`let nulo = null;`|
+|**BigInt**|Números enteros grandes.|`let grande = 12345678901234567890n;`|
+|**Symbol**|Valor único e inmutable.|`let simbolo = Symbol('desc');`|
+
+### Mejores Prácticas y Consejos
+
+1. **Usa el tipo adecuado**: Elige el tipo de datos que mejor se adapte a lo que necesitas hacer (por ejemplo, usa `string` para texto y `number` para cálculos).
+    
+2. **Evita el uso de `undefined` como valor**: Es mejor inicializar las variables o usar `null` si necesitas indicar que una variable no tiene un valor.
+    
+3. **Utiliza `BigInt` para grandes números**: Si necesitas trabajar con números que superan el rango de `Number`, usa `BigInt`.
+    
+4. **Usa `Symbol` para claves únicas**: Cuando necesites propiedades de objeto únicas que no colisionen con otras, considera usar `Symbol`.

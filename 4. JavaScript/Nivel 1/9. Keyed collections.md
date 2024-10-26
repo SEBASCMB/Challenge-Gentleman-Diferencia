@@ -1,0 +1,131 @@
+
+### 1. Map
+
+- **Descripción**: Un `Map` es una colección de pares clave-valor donde las claves pueden ser de cualquier tipo (objetos, funciones, etc.), a diferencia de los objetos que solo permiten cadenas o símbolos como claves. Además, un `Map` mantiene el orden de inserción de los elementos.
+    
+- **Métodos Comunes**:
+    
+    - `set(key, value)`: Agrega o actualiza un elemento en el mapa.
+    - `get(key)`: Devuelve el valor asociado a la clave.
+    - `has(key)`: Devuelve `true` si el mapa contiene la clave, de lo contrario `false`.
+    - `delete(key)`: Elimina la clave y su valor asociado.
+    - `clear()`: Elimina todos los elementos del mapa.
+    - `size`: Devuelve el número de elementos en el mapa.
+
+#### Ejemplo:
+
+```js
+let mapa = new Map();
+mapa.set("nombre", "Juan");
+mapa.set("edad", 25);
+mapa.set(1, "uno");
+
+console.log(mapa.get("nombre")); // Resultado: "Juan"
+console.log(mapa.has(1)); // Resultado: true
+console.log(mapa.size); // Resultado: 3
+mapa.delete("edad");
+console.log(mapa.size); // Resultado: 2
+```
+
+### 2. WeakMap
+
+- **Descripción**: Un `WeakMap` es similar a un `Map`, pero con una diferencia clave: las claves deben ser objetos y son débiles. Esto significa que si no hay otras referencias a la clave, el recolector de basura puede eliminarla, lo que evita fugas de memoria.
+    
+- **Características**:
+    
+    - Solo acepta objetos como claves.
+    - Las claves son "débiles", lo que permite la recolección de basura si no hay referencias externas.
+    - No se puede iterar sobre un `WeakMap`.
+
+
+- **Métodos Comunes**:
+    
+    - `set(key, value)`: Agrega o actualiza un elemento en el `WeakMap`.
+    - `get(key)`: Devuelve el valor asociado a la clave.
+    - `has(key)`: Devuelve `true` si el `WeakMap` contiene la clave, de lo contrario `false`.
+    - `delete(key)`: Elimina la clave y su valor asociado.
+
+#### Ejemplo:
+
+```js
+let objeto = {};
+let weakmap = new WeakMap();
+
+weakmap.set(objeto, "valor asociado");
+console.log(weakmap.get(objeto)); // Resultado: "valor asociado"
+
+// Cuando 'objeto' ya no se referencia, se puede eliminar automáticamente del WeakMap.
+```
+
+### 3. Set
+
+- **Descripción**: Un `Set` es una colección de valores únicos. No permite duplicados y es útil cuando necesitas almacenar datos sin repeticiones. Un `Set` mantiene el orden de inserción de los elementos.
+    
+- **Métodos Comunes**:
+    
+    - `add(value)`: Agrega un nuevo valor al conjunto.
+    - `has(value)`: Devuelve `true` si el conjunto contiene el valor, de lo contrario `false`.
+    - `delete(value)`: Elimina el valor del conjunto.
+    - `clear()`: Elimina todos los elementos del conjunto.
+    - `size`: Devuelve el número de elementos en el conjunto.
+
+#### Ejemplo:
+
+```js
+let conjunto = new Set(); conjunto.add(1); conjunto.add(2); conjunto.add(2); // No se agregará porque 2 ya está en el conjunto 
+console.log(conjunto.size); // Resultado: 2 
+console.log(conjunto.has(1)); // Resultado: true 
+conjunto.delete(1); console.log(conjunto.has(1)); // Resultado: false
+```
+
+### 4. WeakSet
+
+- **Descripción**: Un `WeakSet` es similar a un `Set`, pero solo permite objetos como elementos y tiene referencias débiles. Esto significa que si no hay otras referencias a un objeto, el recolector de basura puede eliminarlo, lo que evita fugas de memoria.
+    
+- **Características**:
+    
+    - Solo acepta objetos como elementos.
+    - Los elementos son "débiles", permitiendo la recolección de basura.
+    - No se puede iterar sobre un `WeakSet`.
+
+- **Métodos Comunes**:
+    
+    - `add(value)`: Agrega un nuevo objeto al `WeakSet`.
+    - `has(value)`: Devuelve `true` si el `WeakSet` contiene el objeto, de lo contrario `false`.
+    - `delete(value)`: Elimina el objeto del `WeakSet`.
+
+#### Ejemplo:
+
+```js
+let objeto1 = {};
+let objeto2 = {};
+let weakset = new WeakSet();
+
+weakset.add(objeto1);
+console.log(weakset.has(objeto1)); // Resultado: true
+weakset.delete(objeto1);
+console.log(weakset.has(objeto1)); // Resultado: false
+
+// Cuando 'objeto2' ya no se referencia, se puede eliminar automáticamente del WeakSet.
+```
+
+### Comparación de Keyed Collections
+
+|**Colección**|**Descripción**|**Características Clave**|
+|---|---|---|
+|**Map**|Colección de pares clave-valor|Claves de cualquier tipo, orden de inserción.|
+|**WeakMap**|Similar a Map, pero claves débiles y solo objetos|Recolección de basura, solo claves de objeto.|
+|**Set**|Colección de valores únicos|No permite duplicados, orden de inserción.|
+|**WeakSet**|Similar a Set, pero solo permite objetos|Recolección de basura, solo elementos de objeto.|
+
+### Mejores Prácticas y Consejos
+
+1. **Usa `Map` para pares clave-valor**: Si necesitas almacenar pares clave-valor y quieres que las claves sean de cualquier tipo, usa `Map`. Es más flexible que un objeto.
+    
+2. **Elige `WeakMap` para datos temporales**: Usa `WeakMap` si necesitas almacenar datos que deben ser eliminados cuando ya no hay referencias a la clave, lo que ayuda a prevenir fugas de memoria.
+    
+3. **Utiliza `Set` para valores únicos**: Si necesitas garantizar que no haya duplicados en una colección, `Set` es la opción adecuada.
+    
+4. **Preferencia por objetos en `WeakSet`**: Si necesitas un conjunto de objetos pero quieres evitar que permanezcan en memoria si no se usan, opta por `WeakSet`.
+    
+5. **Conoce las limitaciones**: Recuerda que no puedes iterar sobre `WeakMap` ni `WeakSet`, así que planifica en consecuencia si necesitas acceder a todos los elementos.
