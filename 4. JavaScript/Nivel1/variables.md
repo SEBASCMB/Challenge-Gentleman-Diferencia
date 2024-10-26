@@ -1,0 +1,87 @@
+
+# Variables
+
+En JavaScript, las **variables** son como cajones en los que puedes guardar diferentes tipos de datos (números, texto, listas, etc.). Para decirle a JavaScript que quieres guardar algo en una variable, usas palabras especiales como **`var`**, **`let`**, y **`const`**. Cada una tiene su propio estilo y reglas para usarse, ¡así que vamos a verlas!
+
+### 1. **Declarar una Variable con `var`**
+
+- `var` fue la forma más común de declarar variables en JavaScript durante mucho tiempo.
+    
+- Al declarar una variable con `var`, esta **puede ser cambiada** (puedes ponerle un valor diferente luego).
+    
+- Las variables declaradas con `var` tienen un alcance un poco diferente al de `let` y `const` (esto se llama "alcance de función" o **scope** de función).
+    
+- **Ejemplo**:
+
+```js
+var nombre = "Juan"; // Declaras una variable y le asignas el valor "Juan"
+nombre = "María";    // Puedes cambiar su valor a "María"
+```
+
+**Problema**: `var` tiene un comportamiento que puede causar confusión, porque **se permite usar la variable antes de declararla**. Esto puede generar errores en el código si no tienes cuidado.
+
+**Pro tip**: Hoy en día, es mejor evitar `var` y usar `let` o `const`, que son más seguras.
+
+### 2. **Declarar una Variable con `let`**
+
+- `let` es más moderno y está diseñado para ser usado en la mayoría de los casos en lugar de `var`.
+    
+- Al declarar una variable con `let`, puedes cambiar su valor después.
+    
+- `let` tiene un **alcance limitado al bloque de código donde la declaras** (esto se llama "alcance de bloque").
+    
+- **Ejemplo**:
+
+```js
+let edad = 10;
+edad = 11; // Cambiamos el valor de edad a 11
+```
+
+**Ventaja**: Con `let`, solo puedes usar la variable después de declararla. Esto ayuda a evitar errores.
+
+### 3. **Declarar una Variable con `const`**
+
+- `const` es para variables que no deberían cambiar su valor después de ser asignadas.
+    
+- Si intentas cambiar el valor de una variable declarada con `const`, obtendrás un error.
+    
+- Al igual que `let`, `const` tiene un alcance de bloque.
+    
+- **Ejemplo**:
+
+```js
+const PI = 3.14159; // El valor de PI no debería cambiar, así que usamos const
+```
+
+**Ventaja**: `const` es ideal para valores fijos, como números que nunca cambian (por ejemplo, la gravedad o la velocidad de la luz).
+
+**Pro tip**: Usa `const` siempre que sea posible. Es más seguro porque asegura que no se cambiará accidentalmente el valor de la variable.
+
+### Resumen Rápido
+
+|Declaración|¿Puede cambiar el valor?|Alcance de la variable|
+|---|---|---|
+|`var`|Sí|Función|
+|`let`|Sí|Bloque|
+|`const`|No|Bloque|
+### Ejemplo Completo
+
+Imagina que estás creando un programa para un juego y quieres mantener los puntajes de los jugadores.
+
+```js
+const MAX_PUNTOS = 100; // No cambia durante el juego
+let puntosJugador = 0;  // Cambia cada vez que el jugador gana puntos
+
+// Sumar puntos al jugador
+puntosJugador = 10;
+puntosJugador += 20; // Ahora puntosJugador es 30
+```
+
+### Mejores prácticas
+
+1. **Usa `const` siempre que puedas** y `let` solo cuando necesites cambiar el valor.
+2. **Evita `var`** para evitar errores de alcance en tu código.
+3. **Dale nombres descriptivos a las variables**: por ejemplo, `puntosJugador` es mejor que `p` porque es fácil de entender.
+
+¡Con estas reglas y ejemplos, puedes declarar variables en JavaScript de forma segura y eficiente!
+
